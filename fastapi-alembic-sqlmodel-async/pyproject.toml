@@ -20,6 +20,7 @@ fastapi-pagination = {extras = ["sqlalchemy"], version = "^0.9.3"}
 fastapi-cache2 = {extras = ["redis"], version = "^0.1.8"}
 fastapi-async-sqlalchemy = "^0.3.12"
 aioredis = "^2.0.1"
+python-dotenv = "^0.21.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

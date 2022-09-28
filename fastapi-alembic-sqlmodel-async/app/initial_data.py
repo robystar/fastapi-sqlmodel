@@ -1,5 +1,10 @@
 import asyncio
 import logging
+import sys
+import pathlib
+
+sys.path.append(str(pathlib.Path(__file__).resolve().parents[1]))
+
 from app.db.init_db import init_db
 from app.db.session import SessionLocal
 

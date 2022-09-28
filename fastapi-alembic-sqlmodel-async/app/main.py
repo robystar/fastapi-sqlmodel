@@ -10,6 +10,10 @@ from fastapi_cache.backends.redis import RedisBackend
 from fastapi_async_sqlalchemy import SQLAlchemyMiddleware
 import aioredis
 
+from app.db.init_db import init_db
+from app.db.session import SessionLocal
+
+
 # Core Application Instance
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -46,6 +50,8 @@ async def add_postgresql_extension() -> None:
 
 @app.get("/")
 async def root():
+    async with SessionLocal() as session:
+        await init_db(session)
     return {"message": "Hello World"}
 
 
